@@ -37,3 +37,16 @@ button {
 button:hover {
     background-color: #dda6c1;
 }
+
+.greeting-text{
+    color: red;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 350px ;
+    text-shadow: 2px 2px #000000;
+}
+
+.mainText{
+    margin-bottom: 300px ;
+    text-shadow: 2px 2px #ffffff;
+}

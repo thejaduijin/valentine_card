@@ -1,24 +1,28 @@
 let yesBtn = document.getElementById("yes");
-yesBtn.addEventListener("click", handleYesClick);
+let noBtn = document.getElementById("no");
 
+yesBtn.addEventListener("click", handleYesClick);
 
 function handleYesClick() {
     console.log("yes")
+    let mainText = document.getElementsByClassName("mainText")
+    mainText.innerHtml = "";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    
+
+    let mainDiv = document.getElementsByClassName("mainDiv")[0]; 
+    let h1 = document.createElement("h1"); 
+    h1.classList.add("greeting-text");
+    h1.textContent = "Hi there and greetings!";
+    mainDiv.appendChild(h1); 
+    
 }
 
-
-let noBtn = document.getElementById("no");
-// noBtn.addEventListener("click", handleNoClick);
-
-// function handleNoClick() {
-//     console.log("no");
-// }
-
-
 function getFarPosition(mouseX, mouseY) {
-    const minDistance = -200; 
-    const maxX = -100; 
-    const maxY = -400; 
+    const minDistance = -200;
+    const maxX = -100;
+    const maxY = -400;
 
     let randomX, randomY, distance;
 
@@ -29,7 +33,7 @@ function getFarPosition(mouseX, mouseY) {
         // Calculate the distance from the current pointer position
         distance = Math.sqrt(Math.pow(randomX - mouseX, 2) + Math.pow(randomY - mouseY, 2));
 
-    } while (distance < minDistance); 
+    } while (distance < minDistance);
 
     return { x: randomX, y: randomY };
 }
